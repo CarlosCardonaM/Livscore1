@@ -37,6 +37,9 @@
 		48FB21CD2824842D0078501C /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FB21CA2824842D0078501C /* SourceSansPro-Regular.ttf */; };
 		48FB21CE2824842D0078501C /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FB21CB2824842D0078501C /* SourceSansPro-Black.ttf */; };
 		48FB21CF2824842D0078501C /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FB21CC2824842D0078501C /* SourceSansPro-Light.ttf */; };
+		48FB21D2282487E40078501C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D1282487E40078501C /* TabBarController.swift */; };
+		48FB21D4282489560078501C /* FixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D3282489560078501C /* FixturesViewController.swift */; };
+		48FB21D6282489630078501C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D5282489630078501C /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		48FB21CA2824842D0078501C /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		48FB21CB2824842D0078501C /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
 		48FB21CC2824842D0078501C /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		48FB21D1282487E40078501C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		48FB21D3282489560078501C /* FixturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesViewController.swift; sourceTree = "<group>"; };
+		48FB21D5282489630078501C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +192,10 @@
 		48FB219D282463C00078501C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48FB21D02824879D0078501C /* TabBars */,
 				48FB219E282463CC0078501C /* Onboarding */,
+				48FB21D3282489560078501C /* FixturesViewController.swift */,
+				48FB21D5282489630078501C /* NewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +250,14 @@
 				48FB217B282462450078501C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		48FB21D02824879D0078501C /* TabBars */ = {
+			isa = PBXGroup;
+			children = (
+				48FB21D1282487E40078501C /* TabBarController.swift */,
+			);
+			path = TabBars;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FB21AC282464640078501C /* Team.swift in Sources */,
+				48FB21D2282487E40078501C /* TabBarController.swift in Sources */,
 				48FB21A2282464000078501C /* ChooseCountryViewController.swift in Sources */,
 				48FB2196282463600078501C /* Extensions.swift in Sources */,
 				48FB218A282462AA0078501C /* StatsTableViewViewModel.swift in Sources */,
@@ -326,6 +344,7 @@
 				48FB21B4282464AD0078501C /* Fixtures.swift in Sources */,
 				48FB219C282463AA0078501C /* APIErrors.swift in Sources */,
 				48FB21A0282463DD0078501C /* WelcomeViewController.swift in Sources */,
+				48FB21D6282489630078501C /* NewsViewController.swift in Sources */,
 				48FB21BC282465220078501C /* TeamInformation.swift in Sources */,
 				48FB2198282463790078501C /* Constants.swift in Sources */,
 				48FB2193282463350078501C /* CountryTableViewCell.swift in Sources */,
@@ -338,6 +357,7 @@
 				48FB21AA282464550078501C /* League.swift in Sources */,
 				48FB21AE282464760078501C /* Seasons.swift in Sources */,
 				48FB21B22824649C0078501C /* Timezones.swift in Sources */,
+				48FB21D4282489560078501C /* FixturesViewController.swift in Sources */,
 				48FB21A72824643D0078501C /* Endpoints.swift in Sources */,
 				48FB21B02824648E0078501C /* Countries.swift in Sources */,
 				48FB21B8282464E30078501C /* Trophies.swift in Sources */,
