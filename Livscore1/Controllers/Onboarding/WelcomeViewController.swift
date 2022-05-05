@@ -200,7 +200,6 @@ extension WelcomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StatsTableViewCell.identifier, for: indexPath) as? StatsTableViewCell else {
             fatalError()
         }
-        print(viewmodels)
         cell.configure(with: viewmodels[indexPath.row])
         return cell
     }
