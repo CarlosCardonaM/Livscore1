@@ -8,10 +8,24 @@
 import UIKit
 
 class FixturesViewController: UIViewController {
+    
+    private var dateToStringFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.dateStyle = .short
+        return formatter
+    }()
+    
+    private var stringToDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return formatter
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchFixtures()
+        fetchFixtures()
     }
     
     private func fetchFixtures() {
@@ -24,7 +38,7 @@ class FixturesViewController: UIViewController {
                 
                 for fixture in fixtures {
                     
-                    print("Date: \(fixture.fixture.date)")
+                    print(self.setFormatter(dateString: fixture.fixture.date))
                     print(fixture.teams.home.name)
                     print("VS")
                     print(fixture.teams.away.name)
@@ -44,6 +58,14 @@ class FixturesViewController: UIViewController {
                 self.simpleAlert(title: "Error", message: "Error trying to fetch fixture data")
             }
         }
+    }
+    
+    private func setFormatter(dateString: String) -> String {
+        // TODO: - Improve date formatter
+        guard let date = stringToDateFormatter.date(from: dateString) else {
+            return "Unknown date"
+        }
+        return dateToStringFormatter.string(from: date)
     }
     
 }
