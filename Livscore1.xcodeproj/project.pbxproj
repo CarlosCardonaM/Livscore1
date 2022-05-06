@@ -192,10 +192,9 @@
 		48FB219D282463C00078501C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				48FB21D02824879D0078501C /* TabBars */,
+				48FB21D728258B160078501C /* TabBarControllers */,
 				48FB219E282463CC0078501C /* Onboarding */,
-				48FB21D3282489560078501C /* FixturesViewController.swift */,
-				48FB21D5282489630078501C /* NewsViewController.swift */,
+				48FB21D02824879D0078501C /* TabBars */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,7 +202,6 @@
 		48FB219E282463CC0078501C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				48FB219F282463DD0078501C /* WelcomeViewController.swift */,
 				48FB21A1282464000078501C /* ChooseCountryViewController.swift */,
 			);
 			path = Onboarding;
@@ -258,6 +256,16 @@
 				48FB21D1282487E40078501C /* TabBarController.swift */,
 			);
 			path = TabBars;
+			sourceTree = "<group>";
+		};
+		48FB21D728258B160078501C /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48FB219F282463DD0078501C /* WelcomeViewController.swift */,
+				48FB21D3282489560078501C /* FixturesViewController.swift */,
+				48FB21D5282489630078501C /* NewsViewController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
