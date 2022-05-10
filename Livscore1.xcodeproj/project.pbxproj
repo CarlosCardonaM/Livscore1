@@ -40,6 +40,8 @@
 		48FB21D2282487E40078501C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D1282487E40078501C /* TabBarController.swift */; };
 		48FB21D4282489560078501C /* FixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D3282489560078501C /* FixturesViewController.swift */; };
 		48FB21D6282489630078501C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D5282489630078501C /* NewsViewController.swift */; };
+		48FB21D9282982820078501C /* FixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D8282982820078501C /* FixtureTableViewCell.swift */; };
+		48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		48FB21D1282487E40078501C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		48FB21D3282489560078501C /* FixturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesViewController.swift; sourceTree = "<group>"; };
 		48FB21D5282489630078501C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		48FB21D8282982820078501C /* FixtureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureTableViewCell.swift; sourceTree = "<group>"; };
+		48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureTableViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			children = (
 				48FB21872824628B0078501C /* CountriesTableView.swift */,
 				48FB2189282462AA0078501C /* StatsTableViewViewModel.swift */,
+				48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				48FB2190282463180078501C /* StatsTableViewCell.swift */,
 				48FB2192282463350078501C /* CountryTableViewCell.swift */,
+				48FB21D8282982820078501C /* FixtureTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			files = (
 				48FB21AC282464640078501C /* Team.swift in Sources */,
 				48FB21D2282487E40078501C /* TabBarController.swift in Sources */,
+				48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */,
 				48FB21A2282464000078501C /* ChooseCountryViewController.swift in Sources */,
 				48FB2196282463600078501C /* Extensions.swift in Sources */,
 				48FB218A282462AA0078501C /* StatsTableViewViewModel.swift in Sources */,
@@ -363,6 +370,7 @@
 				48FB21BA282464F40078501C /* PlayerStatistics.swift in Sources */,
 				48FB21A5282464290078501C /* APICaller.swift in Sources */,
 				48FB21AA282464550078501C /* League.swift in Sources */,
+				48FB21D9282982820078501C /* FixtureTableViewCell.swift in Sources */,
 				48FB21AE282464760078501C /* Seasons.swift in Sources */,
 				48FB21B22824649C0078501C /* Timezones.swift in Sources */,
 				48FB21D4282489560078501C /* FixturesViewController.swift in Sources */,
