@@ -89,7 +89,7 @@ class WelcomeViewController: UIViewController {
         configureView()
         addSubviews()
         configureStatsTableView()
-        fetchData()
+//        fetchData()
         
     }
     
