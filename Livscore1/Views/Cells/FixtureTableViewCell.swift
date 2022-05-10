@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FixtureTableViewCell: UITableViewCell {
     
@@ -13,7 +14,8 @@ class FixtureTableViewCell: UITableViewCell {
     var homeTeamLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.baselineAdjustment = .alignCenters
+        label.numberOfLines = 0
+        label.font = .scriptFont(size: 20, style: "light")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,6 +32,8 @@ class FixtureTableViewCell: UITableViewCell {
     var awayTeamLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
+        label.font = .scriptFont(size: 20, style: "light")
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -82,7 +86,7 @@ class FixtureTableViewCell: UITableViewCell {
             homeLogoImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             homeLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             homeLogoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            homeLogoImageView.widthAnchor.constraint(equalToConstant: 20),
+            homeLogoImageView.widthAnchor.constraint(equalToConstant: 30),
             homeLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             
             // homeTeamLabel
@@ -96,7 +100,7 @@ class FixtureTableViewCell: UITableViewCell {
             awayLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             awayLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             awayLogoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            awayLogoImageView.widthAnchor.constraint(equalToConstant: 20),
+            awayLogoImageView.widthAnchor.constraint(equalToConstant: 30),
             
             // awayTeamLabel
             awayTeamLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -123,9 +127,22 @@ class FixtureTableViewCell: UITableViewCell {
     
     // MARK: - Configure with viewModel
     func configure(with viewModel: FixtureTableViewViewModel) {
+        
+        guard let homeLogoURL = URL(string: viewModel.homeTeamLogo) else { return }
+        guard let awayLogoURL = URL(string: viewModel.awayTeamLogo) else { return }
+        
         homeTeamLabel.text = viewModel.homeTeamName
         awayTeamLabel.text = viewModel.awayTeamName
-        statusLabel.text = viewModel.statusShort
+        
         timeLabel.text = viewModel.date
+        
+        homeLogoImageView.kf.setImage(with: homeLogoURL)
+        awayLogoImageView.kf.setImage(with: awayLogoURL)
+        
+        if viewModel.statusShort == "FT" {
+            statusLabel.text = "\(String(describing: viewModel.homeGoals!)) : \(String(describing:viewModel.awayGoals!))"
+        } else {
+            statusLabel.text = viewModel.statusShort
+        }
     }
 }

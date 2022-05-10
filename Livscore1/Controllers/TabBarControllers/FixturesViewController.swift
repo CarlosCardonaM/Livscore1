@@ -102,7 +102,8 @@ class FixturesViewController: UIViewController {
     // MARK: - fecth fixtures
     private func fetchFixtures() {
         APICaller.shared.fetchData(from: .fixtures, parameters: [URLQueryItem(name: "season", value: "2021"),
-                                                                 URLQueryItem(name: "team", value: "40")
+                                                                 URLQueryItem(name: "team", value: "40"),
+                                                                 URLQueryItem(name: "league", value: "39")
                                                                 ], expecting: FixturesBody.self) { result in
             switch result {
             case .success(let body):
@@ -182,6 +183,10 @@ extension FixturesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
