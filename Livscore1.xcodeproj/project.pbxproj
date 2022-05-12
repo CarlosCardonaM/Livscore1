@@ -42,6 +42,7 @@
 		48FB21D6282489630078501C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D5282489630078501C /* NewsViewController.swift */; };
 		48FB21D9282982820078501C /* FixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D8282982820078501C /* FixtureTableViewCell.swift */; };
 		48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */; };
+		48FB21DE282A16F00078501C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 48FB21DD282A16F00078501C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FB21DE282A16F00078501C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +292,9 @@
 			dependencies = (
 			);
 			name = Livscore1;
+			packageProductDependencies = (
+				48FB21DD282A16F00078501C /* Kingfisher */,
+			);
 			productName = Livscore1;
 			productReference = 48FB216D282462430078501C /* Livscore1.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +323,9 @@
 				Base,
 			);
 			mainGroup = 48FB2164282462430078501C;
+			packageReferences = (
+				48FB21DC282A16F00078501C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 48FB216E282462430078501C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -584,6 +592,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48FB21DC282A16F00078501C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48FB21DD282A16F00078501C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48FB21DC282A16F00078501C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48FB2165282462430078501C /* Project object */;
 }

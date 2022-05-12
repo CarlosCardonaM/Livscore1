@@ -38,6 +38,14 @@ class FixturesViewController: UIViewController {
         return tableView
     }()
     
+    var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: "#D70040")]
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh", attributes: attributes)
+        refreshControl.tintColor = UIColor(hexString: "#D70040")
+        return refreshControl
+    }()
+    
     private var dateToStringFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -90,6 +98,8 @@ class FixturesViewController: UIViewController {
     private func configureFixtureTableView() {
         fixturesTableView.dataSource = self
         fixturesTableView.delegate = self
+        
+        refreshControl.addTarget(self, action: #selector(didPull(_:)), for: .valueChanged)
     }
     
     // MARK: - AddSubviews()
@@ -97,18 +107,22 @@ class FixturesViewController: UIViewController {
         view.addSubview(header)
         view.addSubview(fixturesTableView)
         view.addSubview(appLogoImageView)
+        
+        fixturesTableView.addSubview(refreshControl)
     }
     
     // MARK: - fecth fixtures
     private func fetchFixtures() {
         APICaller.shared.fetchData(from: .fixtures, parameters: [URLQueryItem(name: "season", value: "2021"),
-                                                                 URLQueryItem(name: "team", value: "40")
+                                                                 URLQueryItem(name: "team", value: "40"),
+                                                                 URLQueryItem(name: "league", value: "39")
                                                                 ], expecting: FixturesBody.self) { result in
             switch result {
             case .success(let body):
                 let fixtures = body.allFixtures
                 
                 self.viewModels = fixtures.compactMap({
+                    
                     FixtureTableViewViewModel(id: $0.fixture.id,
                                               date: self.setFormatter(dateString: $0.fixture.date),
                                               timezone: $0.fixture.timezone,
@@ -139,6 +153,7 @@ class FixturesViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.fixturesTableView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
                 
             case .failure(let error):
@@ -155,6 +170,11 @@ class FixturesViewController: UIViewController {
             return "Unknown date"
         }
         return dateToStringFormatter.string(from: date)
+    }
+    
+    // MARK: - Objc methods
+    @objc private func didPull(_ sender: AnyObject) {
+        fetchFixtures()
     }
     
 }
@@ -182,6 +202,10 @@ extension FixturesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
