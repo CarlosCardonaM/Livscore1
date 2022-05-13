@@ -26,7 +26,7 @@ class TabBarController: UITabBarController {
         
         viewControllers = [createNavController(for: WelcomeViewController(), title: "Home", image: UIImage(systemName: "house")!),
                            createNavController(for: FixturesViewController(), title: "Fixtures", image: UIImage(systemName: "calendar.day.timeline.trailing")!),
-                           createNavController(for: NewsViewController(), title: "News", image: UIImage(systemName: "newspaper")!)
+                           createNavController(for: FixDetailViewController(), title: "News", image: UIImage(systemName: "newspaper")!)
         
         ]
     }

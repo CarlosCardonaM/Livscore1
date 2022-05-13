@@ -1,0 +1,266 @@
+//
+//  FixDetailViewController.swift
+//  Livscore1
+//
+//  Created by Carlos Cardona on 12/05/22.
+//
+
+import UIKit
+import Kingfisher
+import SwiftUI
+
+class FixDetailViewController: UIViewController {
+    
+    var selectedFixture = 157201
+    
+    private var headerView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 200))
+        view.backgroundColor = UIColor(hexString: "#181818")
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private var statusLabel: UILabel = {
+        let label = UILabel()
+        label.text = "FT"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .scriptFont(size: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var scoreLabel: UILabel = {
+        let label = UILabel()
+        label.text = "2 : 2"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .scriptFont(size: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var homeTeamLogo: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private var homeTeamNameLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Liverpool Fc"
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = .scriptFont(size: 12, style: fonts.black.description)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var awayTeamLogo: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private var awayTeamNameLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Man. City"
+        label.textColor = .white
+        label.textAlignment = .right
+        label.font = .scriptFont(size: 12, style: fonts.black.description)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var leagueImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "premierLeague")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private var eventTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Events"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .scriptFont(size: 15, style: fonts.light.description)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var eventsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "eventCell")
+        tableView.layer.cornerRadius = 10
+        tableView.backgroundColor = UIColor(hexString: "#181818")
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+        addSubviews()
+//        fetchdata(fixtureId: selectedFixture)
+        configureTableView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        NSLayoutConstraint.activate([
+            
+            // headerView
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            headerView.heightAnchor.constraint(equalToConstant: 120),
+            
+            // Score label
+            scoreLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            scoreLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            
+            // Home team logo
+            homeTeamLogo.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            homeTeamLogo.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
+            homeTeamLogo.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 10),
+            homeTeamLogo.widthAnchor.constraint(equalToConstant: 45),
+            
+            // Home team name
+            homeTeamNameLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
+            homeTeamNameLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+            homeTeamNameLabel.leadingAnchor.constraint(equalTo: homeTeamLogo.trailingAnchor, constant: 10),
+            homeTeamNameLabel.trailingAnchor.constraint(equalTo: scoreLabel.leadingAnchor, constant: -10),
+            homeTeamNameLabel.heightAnchor.constraint(equalToConstant: 18),
+            
+            
+            // Away team logo
+            awayTeamLogo.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            awayTeamLogo.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
+            awayTeamLogo.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -10),
+            awayTeamLogo.widthAnchor.constraint(equalToConstant: 45),
+            
+            //Away name label
+            awayTeamNameLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
+            awayTeamNameLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+            awayTeamNameLabel.leadingAnchor.constraint(equalTo: scoreLabel.trailingAnchor, constant: 10),
+            awayTeamNameLabel.trailingAnchor.constraint(equalTo: awayTeamLogo.leadingAnchor, constant: -10),
+            awayTeamNameLabel.heightAnchor.constraint(equalToConstant: 18),
+            
+            // status label
+            statusLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            statusLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10),
+            statusLabel.heightAnchor.constraint(equalToConstant: 18),
+            
+            // league image
+            leagueImageView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            leagueImageView.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: 10),
+            leagueImageView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10),
+            
+            // Evnets title label
+            eventTitleLabel.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
+            eventTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            eventTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            eventTitleLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            // events tableview
+            eventsTableView.topAnchor.constraint(equalTo: eventTitleLabel.bottomAnchor, constant: 10),
+            eventsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            eventsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            eventsTableView.heightAnchor.constraint(equalToConstant: 300)
+
+        ])
+        
+        
+        
+    }
+    
+    private func configureView() {
+        view.backgroundColor = UIColor(hexString: "#121212")
+    }
+    
+    private func configureTableView() {
+        eventsTableView.dataSource = self
+    }
+    
+    private func addSubviews() {
+        
+        view.addSubview(headerView)
+        
+        headerView.addSubview(homeTeamLogo)
+        headerView.addSubview(homeTeamNameLabel)
+        headerView.addSubview(awayTeamLogo)
+        headerView.addSubview(awayTeamNameLabel)
+        headerView.addSubview(statusLabel)
+        headerView.addSubview(scoreLabel)
+        headerView.addSubview(leagueImageView)
+        
+        view.addSubview(eventTitleLabel)
+        view.addSubview(eventsTableView)
+    }
+    
+    private func fetchdata(fixtureId: Int) {
+        
+        APICaller.shared.fetchData(from: .fixtures,
+                                   parameters: [URLQueryItem(name: "id", value: String(describing: fixtureId))],
+                                   expecting: FixturesBody.self) { retult in
+            
+            switch retult {
+            case .success(let body):
+                
+                DispatchQueue.main.async {
+                    self.configureComponents(with: body)
+                }
+                
+            case .failure(let error):
+                print(error)
+                self.simpleAlert(title: "error", message: "Error trying to call data on 'FixDetailViewController \(error.localizedDescription)")
+            }
+            
+        }
+        
+    }
+    
+    private func configureComponents(with body: FixturesBody) {
+        let fixture = body.allFixtures[0]
+        
+        leagueImageView.kf.setImage(with: URL(string: fixture.league.logo))
+        homeTeamLogo.kf.setImage(with: URL(string: fixture.teams.home.logo))
+        awayTeamLogo.kf.setImage(with: URL(string: fixture.teams.away.logo))
+        homeTeamNameLabel.text = fixture.teams.home.name
+        awayTeamNameLabel.text = fixture.teams.away.name
+        statusLabel.text = fixture.fixture.status.short
+        scoreLabel.text = "\(String(describing: fixture.score.fulltime.home ?? 0)) : \(String(describing: fixture.score.fulltime.away ?? 0))"
+        
+        
+    }
+}
+
+extension FixDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        cell.textLabel?.text = "Hello world"
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = .clear
+        return cell
+    }
+    
+}

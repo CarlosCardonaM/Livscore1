@@ -21,6 +21,7 @@ struct FixtureResponse: Codable {
     var teams: FixtureTeams
     var goals: FixtureGoals
     var score: FixtureScore
+    var events: [FixtureEvents]?
 }
 
 struct Fixture: Codable {
@@ -109,4 +110,34 @@ struct ExtratimeScore: Codable {
 struct PenaltyScore: Codable {
     var home: Int?
     var away: Int?
+}
+
+struct FixtureEvents: Codable {
+    var time: EventTime
+    var team: EvnetTeam
+    var player: EventPlayer
+    var assist: EventAssist
+    var type: String
+    var detail: String
+    var comments: String?
+}
+
+struct EventTime: Codable {
+    var elapsed: Int
+}
+
+struct EvnetTeam: Codable {
+    var id: Int
+    var name: String
+    var logo: String
+}
+
+struct EventPlayer: Codable {
+    var id: Int
+    var name: String
+}
+
+struct EventAssist: Codable {
+    var id: Int?
+    var name: String?
 }
