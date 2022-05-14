@@ -79,7 +79,7 @@ class WelcomeViewController: UIViewController {
     var formLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.scriptFont(size: 20, style: "Light")
+        label.font = UIFont.scriptFont(size: 20, style: fonts.light.description)
         return label
     }()
 
@@ -155,7 +155,7 @@ class WelcomeViewController: UIViewController {
     func configureView() {
         title = "Livscore"
         navigationController?.navigationBar.prefersLargeTitles = true
-        self.view.backgroundColor = UIColor(hexString: "#D70040")
+        self.view.backgroundColor = UIColor(hexString: HexColors.redBackground.description)
     }
     
     // MARK: - AddSubviews()
