@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48869102282F58CC007C9068 /* FixtureEventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */; };
 		48FB2171282462430078501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2170282462430078501C /* AppDelegate.swift */; };
 		48FB2173282462430078501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2172282462430078501C /* SceneDelegate.swift */; };
 		48FB217A282462450078501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FB2179282462450078501C /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureEventCellViewModel.swift; sourceTree = "<group>"; };
 		48FB216D282462430078501C /* Livscore1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livscore1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FB2170282462430078501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FB2172282462430078501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				48FB21872824628B0078501C /* CountriesTableView.swift */,
 				48FB2189282462AA0078501C /* StatsTableViewViewModel.swift */,
 				48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */,
+				48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				48FB2191282463180078501C /* StatsTableViewCell.swift in Sources */,
 				48FB21C3282482F00078501C /* Headers.swift in Sources */,
 				48FB2173282462430078501C /* SceneDelegate.swift in Sources */,
+				48869102282F58CC007C9068 /* FixtureEventCellViewModel.swift in Sources */,
 				48FB21E1282D84C80078501C /* FixDetailViewController.swift in Sources */,
 				48FB21BA282464F40078501C /* PlayerStatistics.swift in Sources */,
 				48FB21A5282464290078501C /* APICaller.swift in Sources */,

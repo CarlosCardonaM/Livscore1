@@ -17,7 +17,7 @@ class FixturesViewController: UIViewController {
     // MARK: - Components
     private var header: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(hexString: "#D70040")
+        view.backgroundColor = UIColor(hexString: HexColors.redBackground.description)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -40,9 +40,9 @@ class FixturesViewController: UIViewController {
     
     var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: "#D70040")]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor(hexString: HexColors.redBackground.description)]
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh", attributes: attributes)
-        refreshControl.tintColor = UIColor(hexString: "#D70040")
+        refreshControl.tintColor = UIColor(hexString: HexColors.redBackground.description)
         return refreshControl
     }()
     
@@ -91,7 +91,7 @@ class FixturesViewController: UIViewController {
     }
     
     private func configureView() {
-        view.backgroundColor = UIColor(hexString: "#D70040")
+        view.backgroundColor = UIColor(hexString: HexColors.redBackground.description)
     }
     
     // MARK: - configure fixtureTableView
@@ -204,7 +204,13 @@ extension FixturesViewController: UITableViewDelegate {
         100
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = FixDetailViewController()
+        vc.selectedFixture = viewModels[indexPath.row].id
+        
+        self.present(vc, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

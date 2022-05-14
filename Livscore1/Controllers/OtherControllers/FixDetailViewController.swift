@@ -11,11 +11,14 @@ import SwiftUI
 
 class FixDetailViewController: UIViewController {
     
-    var selectedFixture = 157201
+    
+    var viewmodels = [FixtureEventCellViewModel]()
+    
+    var selectedFixture = Int()
     
     private var headerView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 200))
-        view.backgroundColor = UIColor(hexString: "#181818")
+        view.backgroundColor = UIColor(hexString: HexColors.darkSecondaryBackgound.description)
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -23,7 +26,6 @@ class FixDetailViewController: UIViewController {
     
     private var statusLabel: UILabel = {
         let label = UILabel()
-        label.text = "FT"
         label.textColor = .white
         label.textAlignment = .center
         label.font = .scriptFont(size: 15)
@@ -33,7 +35,6 @@ class FixDetailViewController: UIViewController {
     
     private var scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 : 2"
         label.textColor = .white
         label.textAlignment = .center
         label.font = .scriptFont(size: 30)
@@ -43,7 +44,6 @@ class FixDetailViewController: UIViewController {
     
     private var homeTeamLogo: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +53,6 @@ class FixDetailViewController: UIViewController {
     private var homeTeamNameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Liverpool Fc"
         label.textColor = .white
         label.textAlignment = .left
         label.font = .scriptFont(size: 12, style: fonts.black.description)
@@ -63,7 +62,6 @@ class FixDetailViewController: UIViewController {
     
     private var awayTeamLogo: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +71,6 @@ class FixDetailViewController: UIViewController {
     private var awayTeamNameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Man. City"
         label.textColor = .white
         label.textAlignment = .right
         label.font = .scriptFont(size: 12, style: fonts.black.description)
@@ -83,7 +80,6 @@ class FixDetailViewController: UIViewController {
     
     private var leagueImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "premierLeague")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -102,9 +98,9 @@ class FixDetailViewController: UIViewController {
     
     private var eventsTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "eventCell")
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.identifier)
         tableView.layer.cornerRadius = 10
-        tableView.backgroundColor = UIColor(hexString: "#181818")
+        tableView.backgroundColor = UIColor(hexString: HexColors.darkSecondaryBackgound.description)
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -114,7 +110,7 @@ class FixDetailViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         addSubviews()
-//        fetchdata(fixtureId: selectedFixture)
+        fetchdata(fixtureId: selectedFixture)
         configureTableView()
     }
     
@@ -189,11 +185,12 @@ class FixDetailViewController: UIViewController {
     }
     
     private func configureView() {
-        view.backgroundColor = UIColor(hexString: "#121212")
+        view.backgroundColor = UIColor(hexString: HexColors.darkBackground.description)
     }
     
     private func configureTableView() {
         eventsTableView.dataSource = self
+        eventsTableView.delegate = self
     }
     
     private func addSubviews() {
@@ -221,8 +218,22 @@ class FixDetailViewController: UIViewController {
             switch retult {
             case .success(let body):
                 
+                guard let events = body.allFixtures[0].events else { return }
+                
+                self.viewmodels = events.compactMap({
+                    FixtureEventCellViewModel(eventTime: $0.time.elapsed,
+                                              eventTeamId: $0.team.id,
+                                              eventTeamName: $0.team.name,
+                                              eventTeamLogo: $0.team.logo,
+                                              eventPlayerId: $0.player.id,
+                                              eventPlayerName: $0.player.name,
+                                              eventType: $0.type,
+                                              eventDetailType: $0.detail)
+                })
+                
                 DispatchQueue.main.async {
                     self.configureComponents(with: body)
+                    self.eventsTableView.reloadData()
                 }
                 
             case .failure(let error):
@@ -252,15 +263,29 @@ class FixDetailViewController: UIViewController {
 extension FixDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        viewmodels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
-        cell.textLabel?.text = "Hello world"
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = .clear
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else {
+            fatalError()
+        }
+        cell.configure(with: viewmodels[indexPath.row])
         return cell
+    }
+    
+}
+
+
+extension FixDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        45
     }
     
 }
