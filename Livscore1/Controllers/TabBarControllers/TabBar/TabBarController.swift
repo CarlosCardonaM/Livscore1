@@ -31,6 +31,12 @@ class TabBarController: UITabBarController {
         ]
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
+    
     
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String,

@@ -24,6 +24,15 @@ class FixDetailViewController: UIViewController {
         return view
     }()
     
+    private var appLogoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "applogo3")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private var statusLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -119,8 +128,13 @@ class FixDetailViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
+            // app logo
+            appLogoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            appLogoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            appLogoImageView.heightAnchor.constraint(equalToConstant: 35),
+            
             // headerView
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            headerView.topAnchor.constraint(equalTo: appLogoImageView.bottomAnchor, constant: 10),
             headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
             headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
             headerView.heightAnchor.constraint(equalToConstant: 120),
@@ -194,6 +208,8 @@ class FixDetailViewController: UIViewController {
     }
     
     private func addSubviews() {
+        
+        view.addSubview(appLogoImageView)
         
         view.addSubview(headerView)
         
