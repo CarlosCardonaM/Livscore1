@@ -26,3 +26,24 @@ class Constants {
     static let countryIdentifier = "countryId"
 }
 
+enum HexColors {
+    case darkBackground
+    case darkSecondaryBackgound
+    case redBackground
+}
+
+extension HexColors: CustomStringConvertible {
+    var description: String  {
+        switch self {
+        case .darkBackground:
+            return "#121212"
+        case .darkSecondaryBackgound:
+            return "#181818"
+        case .redBackground:
+            return "#D70040"
+        }
+    }
+}
+
+
+
