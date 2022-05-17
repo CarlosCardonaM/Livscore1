@@ -114,6 +114,34 @@ class FixDetailViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    private var infoTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Info"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .scriptFont(size: 15, style: fonts.light.description)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var refereeView: FixtureInfoView = {
+        let view = FixtureInfoView()
+        view.titleLabel.text = "Referee"
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private var stadiumView: FixtureInfoView = {
+        let view = FixtureInfoView()
+        view.titleLabel.text = "Stadium"
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,8 +218,22 @@ class FixDetailViewController: UIViewController {
             eventsTableView.topAnchor.constraint(equalTo: eventTitleLabel.bottomAnchor, constant: 10),
             eventsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             eventsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            eventsTableView.heightAnchor.constraint(equalToConstant: 300)
-
+            eventsTableView.heightAnchor.constraint(equalToConstant: 300),
+            
+            infoTitleLabel.topAnchor.constraint(equalTo: eventsTableView.bottomAnchor, constant: 10),
+            infoTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            infoTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            infoTitleLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            refereeView.topAnchor.constraint(equalTo: infoTitleLabel.bottomAnchor, constant: 10),
+            refereeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            refereeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            refereeView.heightAnchor.constraint(equalToConstant: 60),
+            
+            stadiumView.topAnchor.constraint(equalTo: refereeView.bottomAnchor, constant: 10),
+            stadiumView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            stadiumView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            stadiumView.heightAnchor.constraint(equalToConstant: 60)
         ])
         
         
@@ -223,6 +265,10 @@ class FixDetailViewController: UIViewController {
         
         view.addSubview(eventTitleLabel)
         view.addSubview(eventsTableView)
+        
+        view.addSubview(infoTitleLabel)
+        view.addSubview(refereeView)
+        view.addSubview(stadiumView)
     }
     
     private func fetchdata(fixtureId: Int) {
@@ -264,15 +310,22 @@ class FixDetailViewController: UIViewController {
     private func configureComponents(with body: FixturesBody) {
         let fixture = body.allFixtures[0]
         
+        if fixture.fixture.status.short != "FT" {
+            statusLabel.text = "\(fixture.fixture.status.elapsed ?? 6969)'"
+        } else {
+            statusLabel.text = fixture.fixture.status.short
+        }
+        
         leagueImageView.kf.setImage(with: URL(string: fixture.league.logo))
         homeTeamLogo.kf.setImage(with: URL(string: fixture.teams.home.logo))
         awayTeamLogo.kf.setImage(with: URL(string: fixture.teams.away.logo))
         homeTeamNameLabel.text = fixture.teams.home.name
         awayTeamNameLabel.text = fixture.teams.away.name
-        statusLabel.text = fixture.fixture.status.short
-        scoreLabel.text = "\(String(describing: fixture.score.fulltime.home ?? 0)) : \(String(describing: fixture.score.fulltime.away ?? 0))"
         
+        scoreLabel.text = "\(String(describing: fixture.goals.home ?? 0)) : \(String(describing: fixture.goals.away ?? 0))"
         
+        refereeView.valueLabel.text = fixture.fixture.referee
+        stadiumView.valueLabel.text = "\(String(describing:fixture.fixture.venue.name ?? "No stadium")), \(String(describing:fixture.fixture.venue.city ?? "No City"))"
     }
 }
 
