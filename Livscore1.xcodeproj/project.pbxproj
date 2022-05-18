@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		48869102282F58CC007C9068 /* FixtureEventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */; };
 		4886910C28342DD2007C9068 /* FixtureInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886910B28342DD2007C9068 /* FixtureInfoView.swift */; };
+		4886911228345CC2007C9068 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911128345CC2007C9068 /* Standings.swift */; };
+		4886911428345D59007C9068 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911328345D59007C9068 /* StandingsViewController.swift */; };
+		4886911628346033007C9068 /* StandingsTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911528346033007C9068 /* StandingsTableViewViewModel.swift */; };
+		4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911728346A75007C9068 /* StandingTableViewCell.swift */; };
 		48FB2171282462430078501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2170282462430078501C /* AppDelegate.swift */; };
 		48FB2173282462430078501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2172282462430078501C /* SceneDelegate.swift */; };
 		48FB217A282462450078501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FB2179282462450078501C /* Assets.xcassets */; };
@@ -41,7 +45,6 @@
 		48FB21CF2824842D0078501C /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48FB21CC2824842D0078501C /* SourceSansPro-Light.ttf */; };
 		48FB21D2282487E40078501C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D1282487E40078501C /* TabBarController.swift */; };
 		48FB21D4282489560078501C /* FixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D3282489560078501C /* FixturesViewController.swift */; };
-		48FB21D6282489630078501C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D5282489630078501C /* NewsViewController.swift */; };
 		48FB21D9282982820078501C /* FixtureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21D8282982820078501C /* FixtureTableViewCell.swift */; };
 		48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */; };
 		48FB21DE282A16F00078501C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 48FB21DD282A16F00078501C /* Kingfisher */; };
@@ -52,6 +55,10 @@
 /* Begin PBXFileReference section */
 		48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureEventCellViewModel.swift; sourceTree = "<group>"; };
 		4886910B28342DD2007C9068 /* FixtureInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureInfoView.swift; sourceTree = "<group>"; };
+		4886911128345CC2007C9068 /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
+		4886911328345D59007C9068 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
+		4886911528346033007C9068 /* StandingsTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewViewModel.swift; sourceTree = "<group>"; };
+		4886911728346A75007C9068 /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
 		48FB216D282462430078501C /* Livscore1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livscore1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FB2170282462430078501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FB2172282462430078501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +93,6 @@
 		48FB21CC2824842D0078501C /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		48FB21D1282487E40078501C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		48FB21D3282489560078501C /* FixturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesViewController.swift; sourceTree = "<group>"; };
-		48FB21D5282489630078501C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		48FB21D8282982820078501C /* FixtureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureTableViewCell.swift; sourceTree = "<group>"; };
 		48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureTableViewViewModel.swift; sourceTree = "<group>"; };
 		48FB21E0282D84C80078501C /* FixDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixDetailViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 				48FB2189282462AA0078501C /* StatsTableViewViewModel.swift */,
 				48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */,
 				48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */,
+				4886911528346033007C9068 /* StandingsTableViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				48FB2192282463350078501C /* CountryTableViewCell.swift */,
 				48FB21D8282982820078501C /* FixtureTableViewCell.swift */,
 				48FB21E2282DC5AD0078501C /* EventTableViewCell.swift */,
+				4886911728346A75007C9068 /* StandingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 				48FB21B7282464E30078501C /* Trophies.swift */,
 				48FB21B9282464F40078501C /* PlayerStatistics.swift */,
 				48FB21BB282465220078501C /* TeamInformation.swift */,
+				4886911128345CC2007C9068 /* Standings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,7 +291,7 @@
 			children = (
 				48FB219F282463DD0078501C /* WelcomeViewController.swift */,
 				48FB21D3282489560078501C /* FixturesViewController.swift */,
-				48FB21D5282489630078501C /* NewsViewController.swift */,
+				4886911328345D59007C9068 /* StandingsViewController.swift */,
 				48FB21D02824879D0078501C /* TabBar */,
 			);
 			path = TabBarControllers;
@@ -375,10 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */,
 				48FB21AC282464640078501C /* Team.swift in Sources */,
 				48FB21D2282487E40078501C /* TabBarController.swift in Sources */,
 				48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */,
 				48FB21A2282464000078501C /* ChooseCountryViewController.swift in Sources */,
+				4886911428345D59007C9068 /* StandingsViewController.swift in Sources */,
 				48FB2196282463600078501C /* Extensions.swift in Sources */,
 				48FB218A282462AA0078501C /* StatsTableViewViewModel.swift in Sources */,
 				48FB21B6282464CC0078501C /* FixturesStatistics.swift in Sources */,
@@ -387,12 +398,12 @@
 				48FB21B4282464AD0078501C /* Fixtures.swift in Sources */,
 				48FB219C282463AA0078501C /* APIErrors.swift in Sources */,
 				48FB21A0282463DD0078501C /* WelcomeViewController.swift in Sources */,
-				48FB21D6282489630078501C /* NewsViewController.swift in Sources */,
 				48FB21BC282465220078501C /* TeamInformation.swift in Sources */,
 				4886910C28342DD2007C9068 /* FixtureInfoView.swift in Sources */,
 				48FB2198282463790078501C /* Constants.swift in Sources */,
 				48FB2193282463350078501C /* CountryTableViewCell.swift in Sources */,
 				48FB218E282462D50078501C /* CardView.swift in Sources */,
+				4886911228345CC2007C9068 /* Standings.swift in Sources */,
 				48FB2191282463180078501C /* StatsTableViewCell.swift in Sources */,
 				48FB21C3282482F00078501C /* Headers.swift in Sources */,
 				48FB2173282462430078501C /* SceneDelegate.swift in Sources */,
@@ -404,6 +415,7 @@
 				48FB21E3282DC5AD0078501C /* EventTableViewCell.swift in Sources */,
 				48FB21D9282982820078501C /* FixtureTableViewCell.swift in Sources */,
 				48FB21AE282464760078501C /* Seasons.swift in Sources */,
+				4886911628346033007C9068 /* StandingsTableViewViewModel.swift in Sources */,
 				48FB21B22824649C0078501C /* Timezones.swift in Sources */,
 				48FB21D4282489560078501C /* FixturesViewController.swift in Sources */,
 				48FB21A72824643D0078501C /* Endpoints.swift in Sources */,

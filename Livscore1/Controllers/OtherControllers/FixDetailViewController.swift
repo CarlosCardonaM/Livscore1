@@ -166,7 +166,6 @@ class FixDetailViewController: UIViewController {
             headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
             headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
             headerView.heightAnchor.constraint(equalToConstant: 120),
-            
             // Score label
             scoreLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             scoreLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
