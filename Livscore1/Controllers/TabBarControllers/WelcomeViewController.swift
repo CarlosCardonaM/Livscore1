@@ -38,13 +38,14 @@ class WelcomeViewController: UIViewController {
     
     var middleView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hexString: HexColors.darkBackground.description)
         view.layer.cornerRadius = 25
         return view
     }()
     
     var statsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
+        tableView.backgroundColor = UIColor(hexString: HexColors.darkSecondaryBackgound.description)
         tableView.alwaysBounceVertical = false
         tableView.allowsSelection = false
         tableView.register(StatsTableViewCell.self, forCellReuseIdentifier: StatsTableViewCell.identifier)
@@ -63,6 +64,7 @@ class WelcomeViewController: UIViewController {
     var statsTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.textColor = .white
         label.font = UIFont.scriptFont(size: 28)
         label.text = "Top Stats"
         return label
@@ -71,6 +73,7 @@ class WelcomeViewController: UIViewController {
     var goalsTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.textColor = .white
         label.font = UIFont.scriptFont(size: 20)
         label.text = "Goals on Season 21/22"
         return label
@@ -79,6 +82,7 @@ class WelcomeViewController: UIViewController {
     var formLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.textColor = .white
         label.font = UIFont.scriptFont(size: 20, style: fonts.light.description)
         return label
     }()

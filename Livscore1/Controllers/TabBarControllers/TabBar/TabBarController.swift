@@ -15,18 +15,18 @@ class TabBarController: UITabBarController {
         if #available(iOS 13.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
             tabBarAppearance.configureWithDefaultBackground()
-            tabBarAppearance.backgroundColor = UIColor.systemBackground
+            tabBarAppearance.backgroundColor = UIColor(hexString: HexColors.darkGrey.description)
             UITabBar.appearance().standardAppearance = tabBarAppearance
 
             if #available(iOS 15.0, *) {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
         }
-        tabBar.tintColor = .label
+        tabBar.tintColor = .white
         
         viewControllers = [createNavController(for: WelcomeViewController(), title: "Home", image: UIImage(systemName: "house")!),
                            createNavController(for: FixturesViewController(), title: "Fixtures", image: UIImage(systemName: "calendar.day.timeline.trailing")!),
-                           createNavController(for: NewsViewController(), title: "News", image: UIImage(systemName: "newspaper")!)
+                           createNavController(for: StandingsViewController(), title: "Standings", image: UIImage(systemName: "newspaper")!)
         
         ]
     }
