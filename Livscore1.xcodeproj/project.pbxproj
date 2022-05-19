@@ -13,6 +13,7 @@
 		4886911428345D59007C9068 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911328345D59007C9068 /* StandingsViewController.swift */; };
 		4886911628346033007C9068 /* StandingsTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911528346033007C9068 /* StandingsTableViewViewModel.swift */; };
 		4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911728346A75007C9068 /* StandingTableViewCell.swift */; };
+		4886911A2835EB74007C9068 /* StandingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488691192835EB74007C9068 /* StandingsHeaderView.swift */; };
 		48FB2171282462430078501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2170282462430078501C /* AppDelegate.swift */; };
 		48FB2173282462430078501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2172282462430078501C /* SceneDelegate.swift */; };
 		48FB217A282462450078501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FB2179282462450078501C /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		4886911328345D59007C9068 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		4886911528346033007C9068 /* StandingsTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewViewModel.swift; sourceTree = "<group>"; };
 		4886911728346A75007C9068 /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
+		488691192835EB74007C9068 /* StandingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsHeaderView.swift; sourceTree = "<group>"; };
 		48FB216D282462430078501C /* Livscore1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livscore1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FB2170282462430078501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FB2172282462430078501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				48FB218D282462D50078501C /* CardView.swift */,
 				4886910B28342DD2007C9068 /* FixtureInfoView.swift */,
+				488691192835EB74007C9068 /* StandingsHeaderView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				48FB2191282463180078501C /* StatsTableViewCell.swift in Sources */,
 				48FB21C3282482F00078501C /* Headers.swift in Sources */,
 				48FB2173282462430078501C /* SceneDelegate.swift in Sources */,
+				4886911A2835EB74007C9068 /* StandingsHeaderView.swift in Sources */,
 				48869102282F58CC007C9068 /* FixtureEventCellViewModel.swift in Sources */,
 				48FB21E1282D84C80078501C /* FixDetailViewController.swift in Sources */,
 				48FB21BA282464F40078501C /* PlayerStatistics.swift in Sources */,

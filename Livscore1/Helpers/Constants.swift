@@ -32,6 +32,8 @@ enum HexColors {
     case darkSecondaryBackgound
     case redBackground
     case darkGrey
+    case hoverColor
+    case gradientColor
 }
 
 extension HexColors: CustomStringConvertible {
@@ -45,7 +47,12 @@ extension HexColors: CustomStringConvertible {
             return "#D70040"
         case .darkGrey:
             return "#282828"
+        case .hoverColor:
+            return "#343B3C"
+        case .gradientColor:
+            return "#404040"
         }
+
     }
 }
 

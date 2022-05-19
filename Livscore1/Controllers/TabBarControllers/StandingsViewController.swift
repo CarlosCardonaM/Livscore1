@@ -153,6 +153,10 @@ extension StandingsViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = StandingsHeaderView()
+        return headerView
+    }
 }
 
 extension StandingsViewController: UITableViewDelegate {
