@@ -14,6 +14,7 @@
 		4886911628346033007C9068 /* StandingsTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911528346033007C9068 /* StandingsTableViewViewModel.swift */; };
 		4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911728346A75007C9068 /* StandingTableViewCell.swift */; };
 		4886911A2835EB74007C9068 /* StandingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488691192835EB74007C9068 /* StandingsHeaderView.swift */; };
+		48875DD8285A230D00BEC7F8 /* AutoAddPaddingButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */; };
 		48FB2171282462430078501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2170282462430078501C /* AppDelegate.swift */; };
 		48FB2173282462430078501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2172282462430078501C /* SceneDelegate.swift */; };
 		48FB217A282462450078501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FB2179282462450078501C /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		4886911528346033007C9068 /* StandingsTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewViewModel.swift; sourceTree = "<group>"; };
 		4886911728346A75007C9068 /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
 		488691192835EB74007C9068 /* StandingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsHeaderView.swift; sourceTree = "<group>"; };
+		48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoAddPaddingButtton.swift; sourceTree = "<group>"; };
 		48FB216D282462430078501C /* Livscore1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livscore1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FB2170282462430078501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FB2172282462430078501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				48FB218D282462D50078501C /* CardView.swift */,
 				4886910B28342DD2007C9068 /* FixtureInfoView.swift */,
 				488691192835EB74007C9068 /* StandingsHeaderView.swift */,
+				48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				48FB219C282463AA0078501C /* APIErrors.swift in Sources */,
 				48FB21A0282463DD0078501C /* WelcomeViewController.swift in Sources */,
 				48FB21BC282465220078501C /* TeamInformation.swift in Sources */,
+				48875DD8285A230D00BEC7F8 /* AutoAddPaddingButtton.swift in Sources */,
 				4886910C28342DD2007C9068 /* FixtureInfoView.swift in Sources */,
 				48FB2198282463790078501C /* Constants.swift in Sources */,
 				48FB2193282463350078501C /* CountryTableViewCell.swift in Sources */,

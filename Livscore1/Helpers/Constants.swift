@@ -36,6 +36,11 @@ enum HexColors {
     case gradientColor
 }
 
+enum leagues {
+    case premier
+    case ucl
+}
+
 extension HexColors: CustomStringConvertible {
     var description: String  {
         switch self {
