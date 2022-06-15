@@ -21,6 +21,7 @@ class Constants {
     static let TROPHIES_URL = "https://api-football-v1.p.rapidapi.com/v3/trophies"
     static let PLAYER_STATISTICS_URL = "https://api-football-v1.p.rapidapi.com/v3/players"
     static let TEAM_INFORMATION_URL = "https://api-football-v1.p.rapidapi.com/v3/teams"
+    static let STANDINGS_URL = "https://api-football-v1.p.rapidapi.com/v3/standings"
     
     // MARK: - Identifiers for cells
     static let countryIdentifier = "countryId"
@@ -30,6 +31,9 @@ enum HexColors {
     case darkBackground
     case darkSecondaryBackgound
     case redBackground
+    case darkGrey
+    case hoverColor
+    case gradientColor
 }
 
 extension HexColors: CustomStringConvertible {
@@ -41,7 +45,14 @@ extension HexColors: CustomStringConvertible {
             return "#181818"
         case .redBackground:
             return "#D70040"
+        case .darkGrey:
+            return "#282828"
+        case .hoverColor:
+            return "#343B3C"
+        case .gradientColor:
+            return "#404040"
         }
+
     }
 }
 

@@ -38,13 +38,14 @@ class WelcomeViewController: UIViewController {
     
     var middleView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hexString: HexColors.darkBackground.description)
         view.layer.cornerRadius = 25
         return view
     }()
     
     var statsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
+        tableView.backgroundColor = UIColor(hexString: HexColors.darkSecondaryBackgound.description)
         tableView.alwaysBounceVertical = false
         tableView.allowsSelection = false
         tableView.register(StatsTableViewCell.self, forCellReuseIdentifier: StatsTableViewCell.identifier)
@@ -63,6 +64,7 @@ class WelcomeViewController: UIViewController {
     var statsTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.textColor = .white
         label.font = UIFont.scriptFont(size: 28)
         label.text = "Top Stats"
         return label
@@ -71,6 +73,7 @@ class WelcomeViewController: UIViewController {
     var goalsTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.textColor = .white
         label.font = UIFont.scriptFont(size: 20)
         label.text = "Goals on Season 21/22"
         return label
@@ -79,10 +82,21 @@ class WelcomeViewController: UIViewController {
     var formLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.textColor = .white
         label.font = UIFont.scriptFont(size: 20, style: fonts.light.description)
         return label
     }()
-
+    
+    var ynwaLogoImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "ynwa")
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     // MARK: - ViewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +120,11 @@ class WelcomeViewController: UIViewController {
         statsTitleLabel.frame = CGRect(x: 20, y: 20, width: middleView.width - 120, height: 42)
         formLabel.frame = CGRect(x: statsTitleLabel.right + 5, y: 20, width: middleView.width - 105, height: 42)
         statsTableView.frame = CGRect(x: middleView.left + 10, y: statsTitleLabel.bottom + 20, width: middleView.width - 20, height: middleView.height - 92)
+        
+        ynwaLogoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        ynwaLogoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive =  true
+        ynwaLogoImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        ynwaLogoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
     // MARK: - Fetch Data
@@ -161,6 +180,7 @@ class WelcomeViewController: UIViewController {
     // MARK: - AddSubviews()
     func addSubviews() {
         view.addSubview(logoImageView)
+        view.addSubview(ynwaLogoImageView)
         view.addSubview(appLogoImageView)
         view.addSubview(scrollView)
         
