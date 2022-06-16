@@ -13,6 +13,8 @@ class FixturesViewController: UIViewController {
     
     var viewModels = [FixtureTableViewViewModel]()
     
+    private var league = leagues.premier
+    
     
     // MARK: - Components
     private var header: UIView = {
@@ -29,6 +31,32 @@ class FixturesViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    private var league1Button: AutoAddPaddingButtton = {
+        let button = AutoAddPaddingButtton()
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 0.2
+        button.layer.borderColor = UIColor.white.cgColor
+        button.backgroundColor = UIColor(hexString: HexColors.darkBackground.description)
+        button.setTitle("Premier League", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = .scriptFont(size: 14, style: fonts.black.description)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private var league2Button: AutoAddPaddingButtton = {
+        let button = AutoAddPaddingButtton()
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 0.2
+        button.layer.borderColor = UIColor.white.cgColor
+        button.backgroundColor = UIColor(hexString: HexColors.darkBackground.description)
+        button.setTitle("UCL", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = .scriptFont(size: 14, style: fonts.light.description)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     private var fixturesTableView: UITableView = {
@@ -64,8 +92,11 @@ class FixturesViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         addSubview()
-        fetchFixtures()
+//        fetchFixtures()
         configureFixtureTableView()
+        
+        league1Button.addTarget(self, action: #selector(league1Pressed(_:)), for: .touchUpInside)
+        league2Button.addTarget(self, action: #selector(league2Pressed(_:)), for: .touchUpInside)
     }
     
     // MARK: - viewDidLayoutSubviews()
@@ -78,7 +109,15 @@ class FixturesViewController: UIViewController {
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             header.heightAnchor.constraint(equalToConstant: 50),
             
-            fixturesTableView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 10),
+            league1Button.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 10),
+            league1Button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            league1Button.bottomAnchor.constraint(equalTo: fixturesTableView.topAnchor, constant: -10),
+            
+            league2Button.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 10),
+            league2Button.leadingAnchor.constraint(equalTo: league1Button.trailingAnchor, constant: 10),
+            league2Button.bottomAnchor.constraint(equalTo: fixturesTableView.topAnchor, constant: -10),
+            
+            fixturesTableView.topAnchor.constraint(equalTo: league1Button.bottomAnchor, constant: 10),
             fixturesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             fixturesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             fixturesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -107,18 +146,30 @@ class FixturesViewController: UIViewController {
         view.addSubview(header)
         view.addSubview(fixturesTableView)
         view.addSubview(appLogoImageView)
+        view.addSubview(league1Button)
+        view.addSubview(league2Button)
         
         fixturesTableView.addSubview(refreshControl)
     }
     
     // MARK: - fecth fixtures
     private func fetchFixtures() {
+        
+        var leagueValue = "39"
+        
+        if league == leagues.premier {
+            leagueValue = "39"
+        } else if league == leagues.ucl {
+            leagueValue = "2"
+        }
+        
         APICaller.shared.fetchData(from: .fixtures, parameters: [URLQueryItem(name: "season", value: "2021"),
                                                                  URLQueryItem(name: "team", value: "40"),
-                                                                 URLQueryItem(name: "league", value: "39")
+                                                                 URLQueryItem(name: "league", value: leagueValue)
                                                                 ], expecting: FixturesBody.self) { result in
             switch result {
             case .success(let body):
+                
                 let fixtures = body.allFixtures
                 
                 self.viewModels = fixtures.compactMap({
@@ -174,6 +225,20 @@ class FixturesViewController: UIViewController {
     
     // MARK: - Objc methods
     @objc private func didPull(_ sender: AnyObject) {
+        fetchFixtures()
+    }
+    
+    @objc private func league1Pressed(_ sender: UIButton) {
+        league1Button.titleLabel?.font = .scriptFont(size: 12, style: fonts.black.description)
+        league2Button.titleLabel?.font = .scriptFont(size: 12, style: fonts.light.description)
+        league = leagues.premier
+        fetchFixtures()
+    }
+    
+    @objc private func league2Pressed(_ sender: UIButton) {
+        league2Button.titleLabel?.font = .scriptFont(size: 12, style: fonts.black.description)
+        league1Button.titleLabel?.font = .scriptFont(size: 12, style: fonts.light.description)
+        league = leagues.ucl
         fetchFixtures()
     }
     
