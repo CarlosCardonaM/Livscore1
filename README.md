@@ -20,7 +20,11 @@ In ```Headers```class set your ```X-RapidAPI-Key``` and ```X-RapidAPI-Host``` fr
 
 }
 ```
-    ## Color Reference
+    
+## 🛠 Skills
+Swift, URLSession, MVVM, Programmatically
+
+## Color Reference
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -31,10 +35,6 @@ In ```Headers```class set your ```X-RapidAPI-Key``` and ```X-RapidAPI-Host``` fr
 | Hover Color | ![#343B3C](https://via.placeholder.com/10/343B3C?text=+) #343B3C |
 | Gradient Color | ![#404040](https://via.placeholder.com/10/404040?text=+) #404040 |
 
-
-
-## 🛠 Skills
-Swift, URLSession, MVVM, Programmatically
 
 
 ## Resources
