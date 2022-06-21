@@ -24,11 +24,23 @@ class TabBarController: UITabBarController {
         }
         tabBar.tintColor = .white
         
-        viewControllers = [createNavController(for: WelcomeViewController(), title: "Home", image: UIImage(systemName: "house")!),
+        viewControllers = [createNavController(for: HomeViewController(), title: "Home", image: UIImage(systemName: "house")!),
                            createNavController(for: FixturesViewController(), title: "Fixtures", image: UIImage(systemName: "calendar.day.timeline.trailing")!),
                            createNavController(for: StandingsViewController(), title: "Standings", image: UIImage(systemName: "newspaper")!)
         
         ]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !UserDefaults.standard.bool(forKey: "LaunchedBefore") {
+            let vc = WelcomeViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        
+        
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

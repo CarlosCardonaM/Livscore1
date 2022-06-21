@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  HomeViewController.swift
 //  Livscore1
 //
 //  Created by Carlos Cardona on 05/05/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     // MARK: - Variables
     var viewmodels = [StatsTableviewViewModel]()
@@ -210,7 +210,7 @@ class WelcomeViewController: UIViewController {
 }
 
 // MARK: - StatsTableView Datasource Methods
-extension WelcomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewmodels.count
@@ -226,7 +226,7 @@ extension WelcomeViewController: UITableViewDataSource {
 }
 
 // MARK: - StatsTableView Delegate Methods
-extension WelcomeViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         170
     }

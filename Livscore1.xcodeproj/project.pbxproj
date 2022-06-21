@@ -15,6 +15,8 @@
 		4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911728346A75007C9068 /* StandingTableViewCell.swift */; };
 		4886911A2835EB74007C9068 /* StandingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488691192835EB74007C9068 /* StandingsHeaderView.swift */; };
 		48875DD8285A230D00BEC7F8 /* AutoAddPaddingButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */; };
+		48875DDA285CB2CC00BEC7F8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48875DD9285CB2CC00BEC7F8 /* WelcomeViewController.swift */; };
+		48875DDD286209B700BEC7F8 /* PaperOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 48875DDC286209B700BEC7F8 /* PaperOnboarding */; };
 		48FB2171282462430078501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2170282462430078501C /* AppDelegate.swift */; };
 		48FB2173282462430078501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2172282462430078501C /* SceneDelegate.swift */; };
 		48FB217A282462450078501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FB2179282462450078501C /* Assets.xcassets */; };
@@ -27,7 +29,7 @@
 		48FB2196282463600078501C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2195282463600078501C /* Extensions.swift */; };
 		48FB2198282463790078501C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB2197282463790078501C /* Constants.swift */; };
 		48FB219C282463AA0078501C /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB219B282463AA0078501C /* APIErrors.swift */; };
-		48FB21A0282463DD0078501C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB219F282463DD0078501C /* WelcomeViewController.swift */; };
+		48FB21A0282463DD0078501C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB219F282463DD0078501C /* HomeViewController.swift */; };
 		48FB21A2282464000078501C /* ChooseCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21A1282464000078501C /* ChooseCountryViewController.swift */; };
 		48FB21A5282464290078501C /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21A4282464290078501C /* APICaller.swift */; };
 		48FB21A72824643D0078501C /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB21A62824643D0078501C /* Endpoints.swift */; };
@@ -63,6 +65,7 @@
 		4886911728346A75007C9068 /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
 		488691192835EB74007C9068 /* StandingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsHeaderView.swift; sourceTree = "<group>"; };
 		48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoAddPaddingButtton.swift; sourceTree = "<group>"; };
+		48875DD9285CB2CC00BEC7F8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		48FB216D282462430078501C /* Livscore1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livscore1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FB2170282462430078501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FB2172282462430078501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +80,7 @@
 		48FB2195282463600078501C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		48FB2197282463790078501C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		48FB219B282463AA0078501C /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
-		48FB219F282463DD0078501C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		48FB219F282463DD0078501C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		48FB21A1282464000078501C /* ChooseCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCountryViewController.swift; sourceTree = "<group>"; };
 		48FB21A4282464290078501C /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		48FB21A62824643D0078501C /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48875DDD286209B700BEC7F8 /* PaperOnboarding in Frameworks */,
 				48FB21DE282A16F00078501C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				48FB21A1282464000078501C /* ChooseCountryViewController.swift */,
+				48875DD9285CB2CC00BEC7F8 /* WelcomeViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -295,7 +300,7 @@
 		48FB21D728258B160078501C /* TabBarControllers */ = {
 			isa = PBXGroup;
 			children = (
-				48FB219F282463DD0078501C /* WelcomeViewController.swift */,
+				48FB219F282463DD0078501C /* HomeViewController.swift */,
 				48FB21D3282489560078501C /* FixturesViewController.swift */,
 				4886911328345D59007C9068 /* StandingsViewController.swift */,
 				48FB21D02824879D0078501C /* TabBar */,
@@ -329,6 +334,7 @@
 			name = Livscore1;
 			packageProductDependencies = (
 				48FB21DD282A16F00078501C /* Kingfisher */,
+				48875DDC286209B700BEC7F8 /* PaperOnboarding */,
 			);
 			productName = Livscore1;
 			productReference = 48FB216D282462430078501C /* Livscore1.app */;
@@ -360,6 +366,7 @@
 			mainGroup = 48FB2164282462430078501C;
 			packageReferences = (
 				48FB21DC282A16F00078501C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				48875DDB286209B700BEC7F8 /* XCRemoteSwiftPackageReference "paper-onboarding" */,
 			);
 			productRefGroup = 48FB216E282462430078501C /* Products */;
 			projectDirPath = "";
@@ -391,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */,
+				48875DDA285CB2CC00BEC7F8 /* WelcomeViewController.swift in Sources */,
 				48FB21AC282464640078501C /* Team.swift in Sources */,
 				48FB21D2282487E40078501C /* TabBarController.swift in Sources */,
 				48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */,
@@ -403,7 +411,7 @@
 				48FB21882824628B0078501C /* CountriesTableView.swift in Sources */,
 				48FB21B4282464AD0078501C /* Fixtures.swift in Sources */,
 				48FB219C282463AA0078501C /* APIErrors.swift in Sources */,
-				48FB21A0282463DD0078501C /* WelcomeViewController.swift in Sources */,
+				48FB21A0282463DD0078501C /* HomeViewController.swift in Sources */,
 				48FB21BC282465220078501C /* TeamInformation.swift in Sources */,
 				48875DD8285A230D00BEC7F8 /* AutoAddPaddingButtton.swift in Sources */,
 				4886910C28342DD2007C9068 /* FixtureInfoView.swift in Sources */,
@@ -640,6 +648,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		48875DDB286209B700BEC7F8 /* XCRemoteSwiftPackageReference "paper-onboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ramotion/paper-onboarding.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.4;
+			};
+		};
 		48FB21DC282A16F00078501C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -651,6 +667,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		48875DDC286209B700BEC7F8 /* PaperOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48875DDB286209B700BEC7F8 /* XCRemoteSwiftPackageReference "paper-onboarding" */;
+			productName = PaperOnboarding;
+		};
 		48FB21DD282A16F00078501C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48FB21DC282A16F00078501C /* XCRemoteSwiftPackageReference "Kingfisher" */;
