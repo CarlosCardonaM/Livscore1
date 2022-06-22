@@ -92,11 +92,10 @@ class FixturesViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         addSubview()
-//        fetchFixtures()
+        fetchFixtures()
         configureFixtureTableView()
         
-        league1Button.addTarget(self, action: #selector(league1Pressed(_:)), for: .touchUpInside)
-        league2Button.addTarget(self, action: #selector(league2Pressed(_:)), for: .touchUpInside)
+        
     }
     
     // MARK: - viewDidLayoutSubviews()
@@ -131,6 +130,9 @@ class FixturesViewController: UIViewController {
     
     private func configureView() {
         view.backgroundColor = UIColor(hexString: HexColors.redBackground.description)
+        
+        league1Button.addTarget(self, action: #selector(league1Pressed(_:)), for: .touchUpInside)
+        league2Button.addTarget(self, action: #selector(league2Pressed(_:)), for: .touchUpInside)
     }
     
     // MARK: - configure fixtureTableView
