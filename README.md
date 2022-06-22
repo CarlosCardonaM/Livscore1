@@ -9,7 +9,7 @@ Check scores, stats, fixtures, standings and more of the greatest team of the wo
 
 ## Set up
 
-In ```Headers```class set your ```X-RapidAPI-Key``` and ```X-RapidAPI-Host``` from [Api-Football](https://rapidapi.com/api-sports/api/api-football/)
+Create a class named: ```Headers``` and set your ```X-RapidAPI-Key``` and ```X-RapidAPI-Host``` from [Api-Football](https://rapidapi.com/api-sports/api/api-football/)
 
 ```bash
   class Headers {
@@ -22,20 +22,7 @@ In ```Headers```class set your ```X-RapidAPI-Key``` and ```X-RapidAPI-Host``` fr
 ```
     
 ## 🛠 Skills
-Swift, URLSession, MVVM, Programmatically
-
-## Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Dark Background | ![#121212](https://via.placeholder.com/10/121212?text=+) #121212 |
-| Dark Secondary Background | ![#181818](https://via.placeholder.com/10/181818?text=+) #181818 |
-| Red Background | ![#C82323](https://via.placeholder.com/10/C82323?text=+) #C82323 |
-| Dark Grey | ![#282828](https://via.placeholder.com/10/282828?text=+) #282828 |
-| Hover Color | ![#343B3C](https://via.placeholder.com/10/343B3C?text=+) #343B3C |
-| Gradient Color | ![#404040](https://via.placeholder.com/10/404040?text=+) #404040 |
-
-
+Swift, UIKit, URLSession, MVVM, Programmatically, API Rest, UserDefaults
 
 ## Resources
 
