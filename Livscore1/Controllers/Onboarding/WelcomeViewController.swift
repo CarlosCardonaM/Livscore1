@@ -75,14 +75,14 @@ extension WelcomeViewController: PaperOnboardingDataSource {
         
         return [
             OnboardingItemInfo(informationImage: UIImage(named: "applogo3")!,
-                               title: "Welcome!",
+                               title: "Welcome to Livscore!",
                                description: "Check scores, standings, fixtures and more",
                                pageIcon: UIImage(named: "circle")!,
                                color: UIColor(hexString: HexColors.darkBackground.description),
                                titleColor: .white,
                                descriptionColor: .gray,
                                titleFont: .scriptFont(size: 26, style: fonts.black.description),
-                               descriptionFont: .scriptFont(size: 16, style: fonts.light.description)),
+                               descriptionFont: .scriptFont(size: 17, style: fonts.light.description)),
             
             OnboardingItemInfo(informationImage: UIImage(named: "logo")!,
                                title: "YNWA", description: "This app is made by a fan of Liverpool FC",
@@ -91,7 +91,7 @@ extension WelcomeViewController: PaperOnboardingDataSource {
                                titleColor: .white,
                                descriptionColor: .gray,
                                titleFont: .scriptFont(size: 26, style: fonts.black.description),
-                               descriptionFont: .scriptFont(size: 16, style: fonts.light.description))
+                               descriptionFont: .scriptFont(size: 17, style: fonts.light.description))
         ][index]
         
 

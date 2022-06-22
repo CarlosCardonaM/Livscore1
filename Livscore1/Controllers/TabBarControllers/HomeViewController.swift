@@ -103,7 +103,7 @@ class HomeViewController: UIViewController {
         configureView()
         addSubviews()
         configureStatsTableView()
-//        fetchData()
+        fetchData()
         
     }
     
