@@ -41,4 +41,14 @@ on my own personal projects, as well working on clients projects. I m looking
 to gain experience and expand my sklliset by working on a project that
 flas suait.
 
+## Screenshots
 
+![App Screenshot](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Screenshots/screenshot1.png)
+
+![App Screenshot](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Screenshots/screenshot2.png)
+
+![App Screenshot](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Screenshots/screenshot3.png)
+
+![App Screenshot](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Screenshots/screenshot4.png)
+
+![App Screenshot](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Screenshots/screenshot5.png)
