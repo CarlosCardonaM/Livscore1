@@ -14,6 +14,7 @@ class StatsTableViewCell: UITableViewCell {
     private var cellTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .scriptFont(size: 30)
+        label.textColor = .white
         return label
     }()
     

@@ -12,12 +12,14 @@ class CardView: UIView {
     var cardTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.textColor = .white
         label.font = .scriptFont(size: 18, style: fonts.regular.description)
         return label
     }()
     var cardValue: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.textColor = .white
         label.font = .scriptFont(size: 28, style: fonts.light.description)
         return label
     }()
@@ -25,7 +27,7 @@ class CardView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .secondarySystemBackground
+        backgroundColor = UIColor(hexString: HexColors.darkBackground.description)
         
         self.addSubview(cardTitle)
         self.addSubview(cardValue)
