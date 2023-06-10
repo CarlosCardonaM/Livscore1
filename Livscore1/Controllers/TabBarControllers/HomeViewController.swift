@@ -135,7 +135,7 @@ class HomeViewController: UIViewController {
         APICaller.shared.fetchData(from: .teamStatistics,
                                    parameters: [
                                    URLQueryItem(name: "league", value: "39"),
-                                   URLQueryItem(name: "season", value: "2021"),
+                                   URLQueryItem(name: "season", value: "2022"),
                                    URLQueryItem(name: "team", value: "40")
                                    ],
                                    expecting: TeamBody.self) { result in

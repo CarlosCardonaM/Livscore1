@@ -13,6 +13,7 @@ class FixtureTableViewCell: UITableViewCell {
     // MARK: Comoponents
     var homeTeamLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
         label.font = .scriptFont(size: 20, style: "light")
@@ -31,6 +32,7 @@ class FixtureTableViewCell: UITableViewCell {
     
     var awayTeamLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.textAlignment = .right
         label.font = .scriptFont(size: 20, style: "light")
         label.numberOfLines = 0
@@ -49,6 +51,7 @@ class FixtureTableViewCell: UITableViewCell {
     
     var timeLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -56,6 +59,7 @@ class FixtureTableViewCell: UITableViewCell {
     
     var statusLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -79,6 +83,8 @@ class FixtureTableViewCell: UITableViewCell {
     // MARK: - layoutSubviews()
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        backgroundColor = .black
         
         NSLayoutConstraint.activate([
             
@@ -123,6 +129,11 @@ class FixtureTableViewCell: UITableViewCell {
             
             
         ])
+    }
+    
+    // MARK: - Private functions
+    func setupView() {
+        self.backgroundColor = .black
     }
     
     // MARK: - Configure with viewModel
