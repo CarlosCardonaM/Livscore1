@@ -361,13 +361,13 @@
 		48FB21C0282465E50078501C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				48FB2170282462430078501C /* AppDelegate.swift */,
+				48FB2172282462430078501C /* SceneDelegate.swift */,
 				48FB21A82824644B0078501C /* Models */,
 				48FB21D02824879D0078501C /* TabBar */,
 				48FB218C282462C60078501C /* ReusableViews */,
 				48FB21A3282464170078501C /* Network */,
 				48FB2184282462540078501C /* Resources */,
-				48FB2170282462430078501C /* AppDelegate.swift */,
-				48FB2172282462430078501C /* SceneDelegate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

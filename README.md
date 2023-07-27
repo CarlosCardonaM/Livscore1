@@ -4,7 +4,7 @@
 Check scores, stats, fixtures, standings and more of the greatest team of the world. LIVERPOOL
 
 
-![Logo](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Livscore1/Resources/Assets.xcassets/applogo3.imageset/applogo3.png)
+![Logo](https://raw.githubusercontent.com/CarlosCardonaM/Livscore1/develop/Livscore1/Common/Resources/Assets.xcassets/applogo3.imageset/applogo3.png)
 
 
 ## Set up
