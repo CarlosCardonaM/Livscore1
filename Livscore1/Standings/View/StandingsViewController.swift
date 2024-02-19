@@ -81,7 +81,7 @@ class StandingsViewController: UIViewController {
     
     private func fetchStandings() {
         APICaller.shared.fetchData(from: .standings,
-                                   parameters: [URLQueryItem(name: "season", value: "2022"),
+                                   parameters: [URLQueryItem(name: "season", value: "2023"),
                                                 URLQueryItem(name: "league", value: "39")],
                                    expecting: StandingsBody.self) { result in
             
