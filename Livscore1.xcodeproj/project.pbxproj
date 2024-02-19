@@ -119,6 +119,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48AFEFC72A33FF4100055647 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				48AFEFCA2A33FF6300055647 /* Model */,
+				48AFEFC92A33FF5D00055647 /* ViewModel */,
+				48AFEFC82A33FF5400055647 /* View */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		48AFEFC82A33FF5400055647 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48AFEFCD2A34011900055647 /* Cells */,
+				48FB21D3282489560078501C /* FixturesViewController.swift */,
+				48FB21E0282D84C80078501C /* FixDetailViewController.swift */,
+				4886910B28342DD2007C9068 /* FixtureInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48AFEFC92A33FF5D00055647 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */,
+				48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48AFEFCA2A33FF6300055647 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48FB21B5282464CC0078501C /* FixturesStatistics.swift */,
+				48FB21B3282464AD0078501C /* Fixtures.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48AFEFCB2A3400DC00055647 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48FB2192282463350078501C /* CountryTableViewCell.swift */,
+				48FB217B282462450078501C /* LaunchScreen.storyboard */,
+				48FB21872824628B0078501C /* CountriesTableView.swift */,
+				48AFEFCC2A3400E400055647 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48AFEFCC2A3400E400055647 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				48875DD9285CB2CC00BEC7F8 /* WelcomeViewController.swift */,
+				48FB21A1282464000078501C /* ChooseCountryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		48AFEFCD2A34011900055647 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				48FB21E2282DC5AD0078501C /* EventTableViewCell.swift */,
+				48FB21D8282982820078501C /* FixtureTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		48AFEFCE2A34026600055647 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				48AFEFD02A3402BB00055647 /* ViewModel */,
+				48AFEFCF2A34026D00055647 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		48AFEFCF2A34026D00055647 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48FB2190282463180078501C /* StatsTableViewCell.swift */,
+				48FB219F282463DD0078501C /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48AFEFD02A3402BB00055647 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48FB2189282462AA0078501C /* StatsTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48AFEFD12A34033200055647 /* Standings */ = {
+			isa = PBXGroup;
+			children = (
+				48AFEFD42A34034700055647 /* Model */,
+				48AFEFD32A34034200055647 /* ViewModel */,
+				48AFEFD22A34033C00055647 /* View */,
+			);
+			path = Standings;
+			sourceTree = "<group>";
+		};
+		48AFEFD22A34033C00055647 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48FB218F282462EC0078501C /* Cells */,
+				4886911328345D59007C9068 /* StandingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48AFEFD32A34034200055647 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4886911528346033007C9068 /* StandingsTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48AFEFD42A34034700055647 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4886911128345CC2007C9068 /* Standings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		48FB2164282462430078501C = {
 			isa = PBXGroup;
 			children = (
@@ -138,15 +267,12 @@
 		48FB216F282462430078501C /* Livscore1 */ = {
 			isa = PBXGroup;
 			children = (
-				48FB21C1282466070078501C /* Storyboards */,
-				48FB21C0282465E50078501C /* Delegates */,
+				48AFEFD12A34033200055647 /* Standings */,
+				48FB21C0282465E50078501C /* Common */,
+				48AFEFCE2A34026600055647 /* Home */,
 				48FB21942824634B0078501C /* Helpers */,
-				48FB2186282462710078501C /* ViewModels */,
-				48FB219D282463C00078501C /* Controllers */,
-				48FB21A82824644B0078501C /* Model */,
-				48FB21A3282464170078501C /* Network */,
-				48FB218B282462BE0078501C /* Views */,
-				48FB2184282462540078501C /* Resources */,
+				48FB219E282463CC0078501C /* Onboarding */,
+				48AFEFC72A33FF4100055647 /* Fixtures */,
 				48FB217E282462450078501C /* Info.plist */,
 			);
 			path = Livscore1;
@@ -171,32 +297,10 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		48FB2186282462710078501C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				48FB21872824628B0078501C /* CountriesTableView.swift */,
-				48FB2189282462AA0078501C /* StatsTableViewViewModel.swift */,
-				48FB21DA2829E90B0078501C /* FixtureTableViewViewModel.swift */,
-				48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */,
-				4886911528346033007C9068 /* StandingsTableViewViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		48FB218B282462BE0078501C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				48FB218F282462EC0078501C /* Cells */,
-				48FB218C282462C60078501C /* ReusableViews */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		48FB218C282462C60078501C /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
 				48FB218D282462D50078501C /* CardView.swift */,
-				4886910B28342DD2007C9068 /* FixtureInfoView.swift */,
 				488691192835EB74007C9068 /* StandingsHeaderView.swift */,
 				48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */,
 			);
@@ -206,10 +310,6 @@
 		48FB218F282462EC0078501C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				48FB2190282463180078501C /* StatsTableViewCell.swift */,
-				48FB2192282463350078501C /* CountryTableViewCell.swift */,
-				48FB21D8282982820078501C /* FixtureTableViewCell.swift */,
-				48FB21E2282DC5AD0078501C /* EventTableViewCell.swift */,
 				4886911728346A75007C9068 /* StandingTableViewCell.swift */,
 			);
 			path = Cells;
@@ -226,21 +326,10 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		48FB219D282463C00078501C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				48FB21DF282D84A10078501C /* OtherControllers */,
-				48FB21D728258B160078501C /* TabBarControllers */,
-				48FB219E282463CC0078501C /* Onboarding */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		48FB219E282463CC0078501C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				48FB21A1282464000078501C /* ChooseCountryViewController.swift */,
-				48875DD9285CB2CC00BEC7F8 /* WelcomeViewController.swift */,
+				48AFEFCB2A3400DC00055647 /* View */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -254,7 +343,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		48FB21A82824644B0078501C /* Model */ = {
+		48FB21A82824644B0078501C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				48FB21A9282464550078501C /* League.swift */,
@@ -262,31 +351,25 @@
 				48FB21AD282464760078501C /* Seasons.swift */,
 				48FB21AF2824648E0078501C /* Countries.swift */,
 				48FB21B12824649C0078501C /* Timezones.swift */,
-				48FB21B3282464AD0078501C /* Fixtures.swift */,
-				48FB21B5282464CC0078501C /* FixturesStatistics.swift */,
 				48FB21B7282464E30078501C /* Trophies.swift */,
 				48FB21B9282464F40078501C /* PlayerStatistics.swift */,
 				48FB21BB282465220078501C /* TeamInformation.swift */,
-				4886911128345CC2007C9068 /* Standings.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		48FB21C0282465E50078501C /* Delegates */ = {
+		48FB21C0282465E50078501C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				48FB21A82824644B0078501C /* Models */,
+				48FB21D02824879D0078501C /* TabBar */,
+				48FB218C282462C60078501C /* ReusableViews */,
+				48FB21A3282464170078501C /* Network */,
+				48FB2184282462540078501C /* Resources */,
 				48FB2170282462430078501C /* AppDelegate.swift */,
 				48FB2172282462430078501C /* SceneDelegate.swift */,
 			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		48FB21C1282466070078501C /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				48FB217B282462450078501C /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		48FB21D02824879D0078501C /* TabBar */ = {
@@ -295,25 +378,6 @@
 				48FB21D1282487E40078501C /* TabBarController.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		48FB21D728258B160078501C /* TabBarControllers */ = {
-			isa = PBXGroup;
-			children = (
-				48FB219F282463DD0078501C /* HomeViewController.swift */,
-				48FB21D3282489560078501C /* FixturesViewController.swift */,
-				4886911328345D59007C9068 /* StandingsViewController.swift */,
-				48FB21D02824879D0078501C /* TabBar */,
-			);
-			path = TabBarControllers;
-			sourceTree = "<group>";
-		};
-		48FB21DF282D84A10078501C /* OtherControllers */ = {
-			isa = PBXGroup;
-			children = (
-				48FB21E0282D84C80078501C /* FixDetailViewController.swift */,
-			);
-			path = OtherControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
