@@ -165,7 +165,7 @@ class FixturesViewController: UIViewController {
             leagueValue = "2"
         }
         
-        APICaller.shared.fetchData(from: .fixtures, parameters: [URLQueryItem(name: "season", value: "2022"),
+        APICaller.shared.fetchData(from: .fixtures, parameters: [URLQueryItem(name: "season", value: "2023"),
                                                                  URLQueryItem(name: "team", value: "40"),
                                                                  URLQueryItem(name: "league", value: leagueValue)
                                                                 ], expecting: FixturesBody.self) { result in
