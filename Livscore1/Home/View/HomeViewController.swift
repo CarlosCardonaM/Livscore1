@@ -139,20 +139,19 @@ class HomeViewController: UIViewController {
                                    URLQueryItem(name: "team", value: "40")
                                    ],
                                    expecting: TeamBody.self) { result in
-            switch result {
-            case .success(let body):
-                
-                self.data = body
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                switch result {
+                case .success(let body):
+                    
+                    self.data = body
                     self.refreshControl.endRefreshing()
                     self.setUpViewmodels()
                     self.formLabel.text = String(describing: body.response.form?.suffix(5) ?? "")
                     self.statsTableView.reloadData()
+                case .failure(let error):
+                    self.simpleAlert(title: "Error", message: error.localizedDescription)
+                    print(error)
                 }
-            case .failure(let error):
-                self.simpleAlert(title: "Error", message: error.localizedDescription)
-                print(error)
             }
         }
     }
