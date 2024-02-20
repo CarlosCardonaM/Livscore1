@@ -211,7 +211,9 @@ class FixturesViewController: UIViewController {
                 
             case .failure(let error):
                 print(error)
-                self.simpleAlert(title: "Error", message: "Error trying to fetch fixture data")
+                DispatchQueue.main.async {
+                    self.simpleAlert(title: "Error", message: "Error trying to fetch fixture data")
+                }
             }
         }
     }

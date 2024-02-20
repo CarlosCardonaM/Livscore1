@@ -57,7 +57,9 @@ class ChooseCountryViewController: UIViewController {
                     self.countriesTableView.reloadData()
                 }
             case .failure(let error):
-                self.simpleAlert(title: "Error fetching countries", message: error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.simpleAlert(title: "Error fetching countries", message: error.localizedDescription)
+                }
                 print(error)
             }
         }
