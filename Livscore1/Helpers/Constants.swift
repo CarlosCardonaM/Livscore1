@@ -22,6 +22,7 @@ class Constants {
     static let PLAYER_STATISTICS_URL = "https://api-football-v1.p.rapidapi.com/v3/players"
     static let TEAM_INFORMATION_URL = "https://api-football-v1.p.rapidapi.com/v3/teams"
     static let STANDINGS_URL = "https://api-football-v1.p.rapidapi.com/v3/standings"
+    static let SEARCH_URL = "https://api-football-v1.p.rapidapi.com/v3/teams"
     
     // MARK: - Identifiers for cells
     static let countryIdentifier = "countryId"

@@ -24,9 +24,10 @@ class TabBarController: UITabBarController {
         }
         tabBar.tintColor = .white
         
-        viewControllers = [createNavController(for: HomeViewController(), title: "Home", image: UIImage(systemName: "house")!),
-                           createNavController(for: FixturesViewController(), title: "Fixtures", image: UIImage(systemName: "calendar.day.timeline.trailing")!),
-                           createNavController(for: StandingsViewController(), title: "Standings", image: UIImage(systemName: "newspaper")!)
+        viewControllers = [createNavController(for: HomeViewController(), title: "Home", image: UIImage(systemName: "house") ?? UIImage()),
+                           createNavController(for: FixturesViewController(), title: "Fixtures", image: UIImage(systemName: "calendar.day.timeline.trailing") ?? UIImage()),
+                           createNavController(for: StandingsViewController(), title: "Standings", image: UIImage(systemName: "newspaper") ?? UIImage()),
+                           createNavController(for: MoreViewController(), title: "More", image: UIImage(systemName: "ellipsis.circle") ?? UIImage())
         
         ]
     }

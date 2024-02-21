@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		485F5B982B8445D800EAB572 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5B972B8445D800EAB572 /* MoreViewController.swift */; };
+		485F5B9A2B844AB500EAB572 /* MoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5B992B844AB500EAB572 /* MoreHeaderView.swift */; };
+		485F5B9E2B844F0D00EAB572 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5B9D2B844F0D00EAB572 /* MoreViewModel.swift */; };
+		485F5BA12B846C0E00EAB572 /* ChooseTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5BA02B846C0E00EAB572 /* ChooseTeamViewController.swift */; };
+		485F5BA42B84747F00EAB572 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5BA32B84747F00EAB572 /* SearchModel.swift */; };
+		485F5BA82B858F8F00EAB572 /* ChooseTeamTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5BA72B858F8F00EAB572 /* ChooseTeamTableViewViewModel.swift */; };
+		485F5BAB2B85933700EAB572 /* ChooseTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F5BAA2B85933700EAB572 /* ChooseTeamTableViewCell.swift */; };
 		48869102282F58CC007C9068 /* FixtureEventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */; };
 		4886910C28342DD2007C9068 /* FixtureInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886910B28342DD2007C9068 /* FixtureInfoView.swift */; };
 		4886911228345CC2007C9068 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886911128345CC2007C9068 /* Standings.swift */; };
@@ -57,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		485F5B972B8445D800EAB572 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		485F5B992B844AB500EAB572 /* MoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHeaderView.swift; sourceTree = "<group>"; };
+		485F5B9D2B844F0D00EAB572 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		485F5BA02B846C0E00EAB572 /* ChooseTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTeamViewController.swift; sourceTree = "<group>"; };
+		485F5BA32B84747F00EAB572 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		485F5BA72B858F8F00EAB572 /* ChooseTeamTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTeamTableViewViewModel.swift; sourceTree = "<group>"; };
+		485F5BAA2B85933700EAB572 /* ChooseTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTeamTableViewCell.swift; sourceTree = "<group>"; };
 		48869101282F58CC007C9068 /* FixtureEventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureEventCellViewModel.swift; sourceTree = "<group>"; };
 		4886910B28342DD2007C9068 /* FixtureInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureInfoView.swift; sourceTree = "<group>"; };
 		4886911128345CC2007C9068 /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
@@ -119,6 +133,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		485F5B942B84455600EAB572 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				485F5B9C2B844EF500EAB572 /* ViewModel */,
+				485F5B9B2B844EEA00EAB572 /* View */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		485F5B9B2B844EEA00EAB572 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				485F5B972B8445D800EAB572 /* MoreViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		485F5B9C2B844EF500EAB572 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				485F5B9D2B844F0D00EAB572 /* MoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		485F5B9F2B846BED00EAB572 /* ChooseTeam */ = {
+			isa = PBXGroup;
+			children = (
+				485F5BA62B858F6200EAB572 /* View */,
+				485F5BA52B858F4C00EAB572 /* ViewModel */,
+				485F5BA22B84746D00EAB572 /* Model */,
+			);
+			path = ChooseTeam;
+			sourceTree = "<group>";
+		};
+		485F5BA22B84746D00EAB572 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				485F5BA32B84747F00EAB572 /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		485F5BA52B858F4C00EAB572 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				485F5BA72B858F8F00EAB572 /* ChooseTeamTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		485F5BA62B858F6200EAB572 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				485F5BA92B85932000EAB572 /* Cells */,
+				485F5BA02B846C0E00EAB572 /* ChooseTeamViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		485F5BA92B85932000EAB572 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				485F5BAA2B85933700EAB572 /* ChooseTeamTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		48AFEFC72A33FF4100055647 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +349,8 @@
 		48FB216F282462430078501C /* Livscore1 */ = {
 			isa = PBXGroup;
 			children = (
+				485F5B9F2B846BED00EAB572 /* ChooseTeam */,
+				485F5B942B84455600EAB572 /* More */,
 				48AFEFD12A34033200055647 /* Standings */,
 				48FB21C0282465E50078501C /* Common */,
 				48AFEFCE2A34026600055647 /* Home */,
@@ -303,6 +387,7 @@
 				48FB218D282462D50078501C /* CardView.swift */,
 				488691192835EB74007C9068 /* StandingsHeaderView.swift */,
 				48875DD7285A230C00BEC7F8 /* AutoAddPaddingButtton.swift */,
+				485F5B992B844AB500EAB572 /* MoreHeaderView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -464,6 +549,7 @@
 				4886911828346A75007C9068 /* StandingTableViewCell.swift in Sources */,
 				48875DDA285CB2CC00BEC7F8 /* WelcomeViewController.swift in Sources */,
 				48FB21AC282464640078501C /* Team.swift in Sources */,
+				485F5BA42B84747F00EAB572 /* SearchModel.swift in Sources */,
 				48FB21D2282487E40078501C /* TabBarController.swift in Sources */,
 				48FB21DB2829E90B0078501C /* FixtureTableViewViewModel.swift in Sources */,
 				48FB21A2282464000078501C /* ChooseCountryViewController.swift in Sources */,
@@ -471,6 +557,7 @@
 				48FB2196282463600078501C /* Extensions.swift in Sources */,
 				48FB218A282462AA0078501C /* StatsTableViewViewModel.swift in Sources */,
 				48FB21B6282464CC0078501C /* FixturesStatistics.swift in Sources */,
+				485F5B9A2B844AB500EAB572 /* MoreHeaderView.swift in Sources */,
 				48FB2171282462430078501C /* AppDelegate.swift in Sources */,
 				48FB21882824628B0078501C /* CountriesTableView.swift in Sources */,
 				48FB21B4282464AD0078501C /* Fixtures.swift in Sources */,
@@ -481,13 +568,18 @@
 				4886910C28342DD2007C9068 /* FixtureInfoView.swift in Sources */,
 				48FB2198282463790078501C /* Constants.swift in Sources */,
 				48FB2193282463350078501C /* CountryTableViewCell.swift in Sources */,
+				485F5BAB2B85933700EAB572 /* ChooseTeamTableViewCell.swift in Sources */,
 				48FB218E282462D50078501C /* CardView.swift in Sources */,
 				4886911228345CC2007C9068 /* Standings.swift in Sources */,
 				48FB2191282463180078501C /* StatsTableViewCell.swift in Sources */,
+				485F5BA12B846C0E00EAB572 /* ChooseTeamViewController.swift in Sources */,
+				485F5B9E2B844F0D00EAB572 /* MoreViewModel.swift in Sources */,
 				48FB21C3282482F00078501C /* Headers.swift in Sources */,
+				485F5BA82B858F8F00EAB572 /* ChooseTeamTableViewViewModel.swift in Sources */,
 				48FB2173282462430078501C /* SceneDelegate.swift in Sources */,
 				4886911A2835EB74007C9068 /* StandingsHeaderView.swift in Sources */,
 				48869102282F58CC007C9068 /* FixtureEventCellViewModel.swift in Sources */,
+				485F5B982B8445D800EAB572 /* MoreViewController.swift in Sources */,
 				48FB21E1282D84C80078501C /* FixDetailViewController.swift in Sources */,
 				48FB21BA282464F40078501C /* PlayerStatistics.swift in Sources */,
 				48FB21A5282464290078501C /* APICaller.swift in Sources */,

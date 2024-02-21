@@ -19,5 +19,6 @@ enum Endpoints {
     case playerStatistics
     case teamInformation
     case standings
+    case search
 //    case fixtureStatistics
 }

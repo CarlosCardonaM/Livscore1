@@ -60,6 +60,10 @@ class APICaller {
             var urlComp = URLComponents(string: Constants.STANDINGS_URL)
             urlComp?.queryItems = parameters
             url = urlComp?.url!
+        case .search:
+            var urlComp = URLComponents(string: Constants.SEARCH_URL)
+            urlComp?.queryItems = parameters
+            url = urlComp?.url!
         }
         
         guard url != nil else { return }
